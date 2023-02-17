@@ -1,115 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-        h1 {
-          text-align: center;
-          margin: 0;
-          position: absolute;
-          top: 20%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1; /* ensure h1 appears above the carousel */
-        }
-
-        .carousel-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: calc(100vh - 60px); /* 60px is the height of the h1 element */
-          position: relative;
-          margin-top: 60px; /* add margin-top to make space for the h1 element */
-        }
-
-        .carousel-item {
-            position: absolute;
-            width: 60%;
-            height: 60%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 80%;
-        }
-
-        .carousel-item button {
-            margin-top: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            font-size: 16px;
-            width: 100%;
-            height: 20%;
-            box-sizing: border-box;
-            border: none;
-            border-radius: 4px;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .carousel-item button:hover {
-            background-color: #3e8e41;
-            cursor: pointer;
-            transform: translateY(-2px);
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .carousel-item button:active {
-            background-color: #3e8e41;
-            transform: translateY(0px);
-            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .carousel-item button:focus {
-            outline: none;
-        }
-
-        .left-arrow,
-        .right-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        .left-arrow {
-            left: 10px;
-        }
-
-        .right-arrow {
-            right: 10px;
-        }
-
-        @media (max-width: 768px) {
-
-            h1 {
-              font-size: 24px;
-            }
-
-            .carousel-container {
-                height: 300px;
-                margin-top: 30px;
-            }
-
-            .carousel-item {
-                width: 90%;
-            }
-
-            .left-arrow,
-            .right-arrow {
-                font-size: 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Please select a map:</h1>
     <div class="carousel-container">
-      <div class="left-arrow">&lt;</div>
+      <div class="left-arrow" onclick="previousItem()">&lt;</div>
       <div class="carousel-item">
         <img src="https://media.discordapp.net/attachments/1025498148250071092/1075915784401985546/result_map.jpg" />
         <button>Select</button>
@@ -118,29 +15,8 @@
         <img src="https://cdn.discordapp.com/attachments/1025498148250071092/1075916376578985994/result_map1.jpg" />
         <button>Select</button>
       </div>
-      <div class="right-arrow">&gt;</div>
+      <div class="right-arrow" onclick="nextItem()">&gt;</div>
     </div>
-    <script>
-      const carouselItems = document.querySelectorAll(".carousel-item");
-      let currentItemIndex = 0;
-
-      carouselItems.forEach((item, index) => {
-        if (index !== currentItemIndex) {
-          item.style.display = "none";
-        }
-      });
-
-      document.querySelector(".left-arrow").addEventListener("click", () => {
-        carouselItems[currentItemIndex].style.display = "none";
-        currentItemIndex = (currentItemIndex - 1 + carouselItems.length) % carouselItems.length;
-        carouselItems[currentItemIndex].style.display = "flex";
-      });
-
-      document.querySelector(".right-arrow").addEventListener("click", () => {
-        carouselItems[currentItemIndex].style.display = "none";
-        currentItemIndex = (currentItemIndex + 1) % carouselItems.length;
-        carouselItems[currentItemIndex].style.display = "flex";
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
