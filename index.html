@@ -9,6 +9,7 @@
           top: 20%;
           left: 50%;
           transform: translate(-50%, -50%);
+          z-index: 1; /* ensure h1 appears above the carousel */
         }
 
         .carousel-container {
@@ -84,6 +85,11 @@
         }
 
         @media (max-width: 768px) {
+
+            h1 {
+              font-size: 24px;
+            }
+
             .carousel-container {
                 height: 300px;
                 margin-top: 30px;
