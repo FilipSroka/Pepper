@@ -1,7 +1,7 @@
-const carouselItems = document.querySelectorAll(".carousel-item");
-let currentItemIndex = 0;
+var carouselItems = document.querySelectorAll(".carousel-item");
+var currentItemIndex = 0;
 
-carouselItems.forEach((item, index) => {
+Array.prototype.forEach.call(carouselItems, function(item, index) {
   if (index !== currentItemIndex) {
     item.style.display = "none";
   }
