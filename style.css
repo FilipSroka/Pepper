@@ -10,6 +10,7 @@ h1 {
   
   .carousel-container {
     transform: translate(-50%, -50%);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
