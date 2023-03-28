@@ -18,3 +18,7 @@ function nextItem() {
   currentItemIndex = (currentItemIndex + 1) % carouselItems.length;
   carouselItems[currentItemIndex].style.display = "flex";
 }
+
+function loadMap(n) {
+  window.close();
+}
