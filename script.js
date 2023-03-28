@@ -20,5 +20,6 @@ function nextItem() {
 }
 
 function loadMap(n) {
+  window.location.href = "loading.html";
   window.close();
 }
