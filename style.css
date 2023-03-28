@@ -5,22 +5,19 @@
     margin-top: 5vh;
 }
 
-
 h1 {
     text-align: center;
     margin: 0;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* ensure h1 appears above the carousel */
+    z-index: 1;
   }
   
   .carousel-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-     /* 60px is the height of the h1 element */
-     /* add margin-top to make space for the h1 element */
     width: 75%;
   }
   
